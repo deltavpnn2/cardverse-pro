@@ -18,7 +18,9 @@ export interface Offer {
   badge: OfferBadge;
   accent: OfferAccent;
   ctaText: string;
-  /** Replace this single value with the real offer/tracking URL. */
+  /** Optional short detail, e.g. "Up to $100" or "Instant". */
+  detail?: string;
+  /** EDIT HERE: each offer's own destination (affiliate / AdBlueMedia) URL. */
   ctaUrl: string;
 }
 
@@ -40,6 +42,7 @@ export const offers: Offer[] = [
     badge: "Featured",
     accent: "cyan",
     ctaText: "Explore →",
+    detail: "Instant",
     ctaUrl: "PASTE_OFFER_URL_1_HERE",
   },
   {
@@ -51,6 +54,7 @@ export const offers: Offer[] = [
     badge: "Popular",
     accent: "violet",
     ctaText: "Explore →",
+    detail: "Up to $100",
     ctaUrl: "PASTE_OFFER_URL_2_HERE",
   },
   {
@@ -62,6 +66,7 @@ export const offers: Offer[] = [
     badge: "New",
     accent: "sunset",
     ctaText: "Explore →",
+    detail: "Limited time",
     ctaUrl: "PASTE_OFFER_URL_3_HERE",
   },
   {
@@ -73,6 +78,7 @@ export const offers: Offer[] = [
     badge: "Featured",
     accent: "cyan",
     ctaText: "Explore →",
+    detail: "Instant",
     ctaUrl: "PASTE_OFFER_URL_4_HERE",
   },
   {
@@ -84,6 +90,7 @@ export const offers: Offer[] = [
     badge: "New",
     accent: "sunset",
     ctaText: "Explore →",
+    detail: "New users",
     ctaUrl: "PASTE_OFFER_URL_5_HERE",
   },
   {
@@ -95,6 +102,7 @@ export const offers: Offer[] = [
     badge: "Popular",
     accent: "teal",
     ctaText: "Explore →",
+    detail: "Up to $50",
     ctaUrl: "PASTE_OFFER_URL_6_HERE",
   },
 ];

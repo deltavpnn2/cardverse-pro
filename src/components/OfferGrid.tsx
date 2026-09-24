@@ -11,7 +11,7 @@ export function OfferGrid({ offers }: { offers: Offer[] }) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-5 min-[480px]:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-3 min-[340px]:grid-cols-2 sm:gap-5 lg:grid-cols-3">
       {offers.map((offer, i) => (
         <OfferCard key={offer.id} offer={offer} index={i} />
       ))}

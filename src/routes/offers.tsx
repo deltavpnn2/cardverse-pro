@@ -50,7 +50,7 @@ function OffersPage() {
       />
 
       <section className="container-page pb-20">
-        <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4">
           <SearchBar
             value={query}
             onChange={setQuery}
