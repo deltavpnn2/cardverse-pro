@@ -19,8 +19,8 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -320,6 +320,42 @@
 @utility card-zoom {
   transition: transform 0.5s ease;
   will-change: transform;
+}
+
+@utility hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  background: linear-gradient(120deg, var(--foreground) 35%, color-mix(in oklab, var(--primary) 75%, white) 75%, color-mix(in oklab, var(--violet) 45%, white));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-wrap: balance;
+}
+
+@utility logo-badge {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.35rem;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 6px 16px -6px oklch(0 0 0 / 0.6);
+  transition: box-shadow 0.25s ease;
+  @media (min-width: 640px) {
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0.45rem;
+    border-radius: 0.75rem;
+  }
+}
+
+@media (hover: hover) {
+  .card-premium:hover .logo-badge {
+    box-shadow: 0 6px 16px -6px oklch(0 0 0 / 0.6), 0 0 18px -2px color-mix(in oklab, var(--a1, var(--primary)) 70%, transparent);
+  }
 }
 
 @keyframes cv-float {
