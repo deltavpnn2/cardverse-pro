@@ -1,22 +1,26 @@
+import type { CSSProperties } from "react";
 import type { Offer } from "@/data/offers";
+import { ExploreButton, toneGradient, type ExploreTone } from "./ExploreButton";
 
-const accentBg: Record<Offer["accent"], string> = {
-  cyan: "linear-gradient(135deg, var(--primary), var(--primary-glow))",
-  violet: "linear-gradient(135deg, var(--violet), var(--pink))",
-  sunset: "linear-gradient(135deg, var(--orange), var(--coral))",
-  teal: "linear-gradient(135deg, var(--primary), var(--violet))",
+const accentTone: Record<Offer["accent"], ExploreTone> = {
+  cyan: "primary",
+  violet: "violet-pink",
+  sunset: "pink-coral",
+  teal: "blue-violet",
 };
 
 export function OfferCard({ offer, index = 0 }: { offer: Offer; index?: number }) {
+  const tone = accentTone[offer.accent];
+  const [a1, a2] = toneGradient[tone];
   return (
     <article
-      className="glass hover-lift animate-rise group relative flex flex-col overflow-hidden rounded-2xl"
-      style={{ animationDelay: `${Math.min(index, 8) * 40}ms` }}
+      className="card-premium card-offer animate-rise group relative flex flex-col overflow-hidden"
+      style={{ animationDelay: `${Math.min(index, 8) * 40}ms`, "--a1": a1, "--a2": a2 } as CSSProperties}
     >
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-1"
-        style={{ background: accentBg[offer.accent] }}
+        style={{ background: `linear-gradient(90deg, ${a1}, ${a2})` }}
       />
       <div className="relative aspect-video overflow-hidden">
         <img
@@ -27,29 +31,26 @@ export function OfferCard({ offer, index = 0 }: { offer: Offer; index?: number }
           height={608}
           className="card-zoom size-full object-cover"
         />
-        <span
-          className="absolute top-3 left-3 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide text-primary-foreground"
-          style={{ background: accentBg[offer.accent] }}
-        >
-          {offer.badge}
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+        <span className="badge-pill absolute top-3 left-3 uppercase" style={{ "--badge": a1 } as CSSProperties}>
+          ✦ {offer.badge}
         </span>
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-5">
-        <p className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
+        <p className="text-[11px] font-semibold tracking-widest uppercase" style={{ color: a1 }}>
           {offer.category}
         </p>
         <h3 className="text-lg font-bold tracking-tight">{offer.title}</h3>
         <p className="text-sm text-muted-foreground">{offer.description}</p>
-        <a
+        <ExploreButton
           href={offer.ctaUrl}
+          tone={tone}
           target="_blank"
           rel="noopener noreferrer sponsored"
-          className="btn-base btn-ghost mt-4 w-full"
+          className="mt-auto"
           aria-label={`Explore ${offer.title}`}
-        >
-          Explore <span className="card-arrow">→</span>
-        </a>
+        />
       </div>
     </article>
   );
