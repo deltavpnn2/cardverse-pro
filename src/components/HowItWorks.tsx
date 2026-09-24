@@ -13,7 +13,7 @@ const steps = [
   },
   {
     n: "03",
-    title: "Explore",
+    title: "Continue",
     text: "Use the clearly labeled button to continue to the relevant destination.",
   },
 ];
