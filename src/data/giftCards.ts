@@ -2,6 +2,7 @@ import artGaming from "@/assets/art-gaming.jpg";
 import artEntertainment from "@/assets/art-entertainment.jpg";
 import artShopping from "@/assets/art-shopping.jpg";
 import artDigital from "@/assets/art-digital.jpg";
+import { brandLogos, type BrandLogo } from "./brandLogos";
 
 export type GiftCardCategory =
   | "Gaming"
@@ -19,6 +20,7 @@ export interface GiftCard {
   region: string;
   ctaText: string;
   ctaUrl: string;
+  logo: BrandLogo;
 }
 
 export const giftCardCategories = [
@@ -30,7 +32,7 @@ export const giftCardCategories = [
   "Digital",
 ] as const;
 
-export const giftCards: GiftCard[] = [
+const rawCards: Omit<GiftCard, "logo">[] = [
   {
     id: "steam",
     name: "Steam Gift Card",
@@ -162,3 +164,5 @@ export const giftCards: GiftCard[] = [
     ctaUrl: "/gift-cards",
   },
 ];
+
+export const giftCards: GiftCard[] = rawCards.map((c) => ({ ...c, logo: brandLogos[c.id] }));

@@ -11,7 +11,7 @@ export function GiftCardGrid({ cards }: { cards: GiftCard[] }) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-5 min-[480px]:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-2 gap-2.5 min-[380px]:gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-5">
       {cards.map((card, i) => (
         <GiftCardItem key={card.id} card={card} index={i} />
       ))}

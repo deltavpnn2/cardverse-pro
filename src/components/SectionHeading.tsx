@@ -16,7 +16,7 @@ export function SectionHeading({
         <span aria-hidden="true" className="size-1.5 rounded-full bg-primary shadow-[0_0_10px_var(--primary)]" />
         {label}
       </span>
-      <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">{title}</h2>
+      <h2 className="font-display mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">{title}</h2>
       <span
         aria-hidden="true"
         className={`mt-4 block h-0.5 w-14 rounded-full bg-[image:var(--gradient-teal-violet)] ${align === "center" ? "mx-auto" : ""}`}
