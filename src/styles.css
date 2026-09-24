@@ -257,12 +257,12 @@
     transition: opacity 0.25s ease;
   }
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: oklch(1 0 0 / 14%);
     box-shadow: var(--shadow-glass), 0 26px 60px -26px color-mix(in oklab, var(--a1, var(--primary)) 75%, transparent);
   }
   &:hover::before { opacity: 1; }
-  &:hover .card-zoom { transform: scale(1.03); }
+  &:hover .card-zoom { transform: scale(1.02); }
   &:hover .btn-explore { filter: brightness(1.08); }
 }
 
