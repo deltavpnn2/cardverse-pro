@@ -24,13 +24,13 @@ export function GiftCardItem({ card, index = 0 }: { card: GiftCard; index?: numb
         <h3 className="text-base font-bold tracking-tight">{card.name}</h3>
         <p className="text-sm text-muted-foreground">{card.description}</p>
         <p className="text-xs text-muted-foreground/80">{card.region}</p>
-        <Link
-          to={card.ctaUrl}
+        <a
+          href={card.ctaUrl}
           className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
           aria-label={`Explore ${card.name}`}
         >
           Explore <span className="card-arrow">→</span>
-        </Link>
+        </a>
       </div>
     </article>
   );
