@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import type { GiftCard } from "@/data/giftCards";
 
 export function GiftCardItem({ card, index = 0 }: { card: GiftCard; index?: number }) {
