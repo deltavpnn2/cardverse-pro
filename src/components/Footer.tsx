@@ -5,8 +5,10 @@ const groups = [
   {
     title: "Explore",
     links: [
+      { label: "Home", to: "/" },
       { label: "Gift Cards", to: "/gift-cards" },
       { label: "Offers", to: "/offers" },
+      { label: "Explore Cards", to: "/gift-cards" },
     ],
   },
   {
@@ -59,7 +61,7 @@ export function Footer() {
                 </h2>
                 <ul className="mt-4 space-y-3">
                   {g.links.map((l) => (
-                    <li key={l.to}>
+                    <li key={l.label}>
                       <Link
                         to={l.to}
                         className="text-sm text-muted-foreground transition-colors hover:text-primary"

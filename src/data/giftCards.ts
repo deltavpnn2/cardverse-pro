@@ -15,6 +15,8 @@ export interface GiftCard {
   colors: [string, string];
   /** Short wordmark printed on the card face. */
   wordmark: string;
+  /** Denomination shown on the card face, e.g. "$25". */
+  amount: string;
 }
 
 export const giftCardCategories = [
@@ -36,6 +38,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Wallet credit for games, DLC and software on Steam.",
     colors: ["#1b2838", "#2a75bb"],
+    amount: "$20",
   },
   {
     id: "playstation",
@@ -44,6 +47,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Credit for games, add-ons and PlayStation Plus.",
     colors: ["#00246b", "#0070d1"],
+    amount: "$50",
   },
   {
     id: "xbox",
@@ -52,6 +56,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Games, add-ons and Game Pass on Xbox and PC.",
     colors: ["#0b3d0b", "#1fa11f"],
+    amount: "$25",
   },
   {
     id: "nintendo",
@@ -60,6 +65,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Digital games and content for Nintendo Switch.",
     colors: ["#8a0010", "#e60012"],
+    amount: "$50",
   },
   {
     id: "roblox",
@@ -68,6 +74,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Robux and premium items across Roblox experiences.",
     colors: ["#1a1a1a", "#e2231a"],
+    amount: "$25",
   },
   {
     id: "fortnite",
@@ -76,6 +83,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "V-Bucks for skins, emotes and the Battle Pass.",
     colors: ["#3b1a8f", "#1fa3ff"],
+    amount: "$20",
   },
   {
     id: "pubg",
@@ -84,6 +92,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Unknown Cash for Royale Pass and outfits.",
     colors: ["#3a2a00", "#f2a900"],
+    amount: "$10",
   },
   {
     id: "valorant",
@@ -92,6 +101,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "VP for weapon skins and agent contracts.",
     colors: ["#3d0b12", "#fa4454"],
+    amount: "$25",
   },
   {
     id: "lol",
@@ -100,6 +110,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Riot Points for champions and skins.",
     colors: ["#0a1428", "#c89b3c"],
+    amount: "$25",
   },
   {
     id: "razer-gold",
@@ -108,6 +119,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Universal credits for thousands of games.",
     colors: ["#0a0a0a", "#44d62c"],
+    amount: "$25",
   },
   {
     id: "riot",
@@ -116,6 +128,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Prepaid credit for Riot Games titles.",
     colors: ["#5a0a0e", "#eb0029"],
+    amount: "$25",
   },
   {
     id: "battlenet",
@@ -124,6 +137,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Balance for Blizzard games and services.",
     colors: ["#06213f", "#148eff"],
+    amount: "$20",
   },
   {
     id: "ea",
@@ -132,6 +146,7 @@ const rawCards: Raw[] = [
     category: "Gaming",
     description: "Credit for EA games and EA Play membership.",
     colors: ["#1a1a1a", "#ff4747"],
+    amount: "$20",
   },
   {
     id: "netflix",
@@ -140,6 +155,7 @@ const rawCards: Raw[] = [
     category: "Streaming",
     description: "Prepaid credit for Netflix memberships.",
     colors: ["#141414", "#e50914"],
+    amount: "$25",
   },
   {
     id: "spotify",
@@ -148,6 +164,7 @@ const rawCards: Raw[] = [
     category: "Streaming",
     description: "Premium music and podcasts, ad-free.",
     colors: ["#0d0d0d", "#1db954"],
+    amount: "$10",
   },
   {
     id: "twitch",
@@ -156,6 +173,7 @@ const rawCards: Raw[] = [
     category: "Entertainment",
     description: "Subs, Bits and Turbo on Twitch.",
     colors: ["#2a0f5c", "#9146ff"],
+    amount: "$25",
   },
   {
     id: "discord",
@@ -164,6 +182,7 @@ const rawCards: Raw[] = [
     category: "Entertainment",
     description: "Nitro perks, boosts and custom emoji.",
     colors: ["#2b2f8a", "#5865f2"],
+    amount: "$10",
   },
   {
     id: "apple",
@@ -172,14 +191,16 @@ const rawCards: Raw[] = [
     category: "Digital",
     description: "Apps, games, music and more from Apple.",
     colors: ["#1c1c1e", "#8e8e93"],
+    amount: "$25",
   },
   {
     id: "google-play",
-    name: "Google Play",
+    name: "Google Play Gift Card",
     wordmark: "Google Play",
     category: "Digital",
     description: "Apps, games and in-app items on Android.",
     colors: ["#01573f", "#34a853"],
+    amount: "$25",
   },
   {
     id: "amazon",
@@ -188,13 +209,14 @@ const rawCards: Raw[] = [
     category: "Shopping",
     description: "Shop millions of items on Amazon.",
     colors: ["#131921", "#ff9900"],
+    amount: "$50",
   },
 ];
 
 export const giftCards: GiftCard[] = rawCards.map((c) => ({
   ...c,
   region: "Availability varies",
-  ctaText: "Explore →",
+  ctaText: "Claim →",
   ctaUrl: "/gift-cards",
   logo: brandLogos[c.id],
 }));

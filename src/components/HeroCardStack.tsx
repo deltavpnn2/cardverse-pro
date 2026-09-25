@@ -2,15 +2,14 @@ import { giftCards } from "@/data/giftCards";
 import { CardFace } from "./GiftCardItem";
 
 /** Ids selected from data/giftCards to build the Hero composition. */
-const stackIds = ["steam", "playstation", "roblox", "xbox", "nintendo", "amazon"] as const;
+const stackIds = ["steam", "playstation", "xbox", "google-play", "amazon"] as const;
 
 const layout: Record<(typeof stackIds)[number], string> = {
   steam: "top-[2%] left-0 z-30 w-[56%] -rotate-[6deg]",
   playstation: "top-0 right-0 z-20 w-[44%] rotate-[7deg]",
-  roblox: "bottom-0 left-[18%] z-40 w-[50%] rotate-[4deg]",
-  xbox: "right-[4%] bottom-[8%] z-10 w-[40%] -rotate-[6deg]",
-  nintendo: "top-[40%] left-[2%] z-[15] w-[32%] rotate-[9deg]",
-  amazon: "top-[44%] right-[2%] z-25 w-[32%] -rotate-[8deg]",
+  xbox: "right-[2%] bottom-[4%] z-40 w-[46%] rotate-[4deg]",
+  "google-play": "top-[42%] left-0 z-[15] w-[30%] rotate-[9deg] hidden min-[420px]:block",
+  amazon: "top-[46%] right-0 z-10 w-[30%] -rotate-[8deg] hidden min-[420px]:block",
 };
 
 export function HeroCardStack() {
