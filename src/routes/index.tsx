@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { GiftCardGrid } from "@/components/GiftCardGrid";
 import { OfferGrid } from "@/components/OfferGrid";
-import { RegionPills } from "@/components/RegionPills";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CTASection } from "@/components/CTASection";
 import { giftCards } from "@/data/giftCards";
@@ -64,18 +63,6 @@ function Home() {
             <Link to="/offers" className="btn-base btn-ghost">
               View All Offers →
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad pt-0">
-        <div className="container-page">
-          <div className="glass rounded-3xl px-6 py-12 text-center md:px-14">
-            <SectionHeading
-              title="Global Availability"
-              subtitle="Digital card and offer availability can vary by country, region and provider. Always check the applicable terms and supported locations before continuing."
-            />
-            <RegionPills />
           </div>
         </div>
       </section>

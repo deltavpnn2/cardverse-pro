@@ -1,7 +1,8 @@
 import type { AnchorHTMLAttributes, CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 
-export type ExploreTone = "primary" | "blue-violet" | "violet-pink" | "pink-coral" | "teal-cyan" | "sunset";
+export type ExploreTone =
+  "primary" | "blue-violet" | "violet-pink" | "pink-coral" | "teal-cyan" | "sunset";
 
 export const toneGradient: Record<ExploreTone, [string, string]> = {
   primary: ["var(--primary)", "var(--blue)"],
@@ -19,7 +20,15 @@ type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
   label?: string;
 };
 
-export function ExploreButton({ tone = "primary", from, to, label = "Explore", className, style, ...rest }: Props) {
+export function ExploreButton({
+  tone = "primary",
+  from,
+  to,
+  label = "Explore",
+  className,
+  style,
+  ...rest
+}: Props) {
   const [a, b] = toneGradient[tone];
   return (
     <a
@@ -27,7 +36,10 @@ export function ExploreButton({ tone = "primary", from, to, label = "Explore", c
       className={cn("btn-explore", className)}
       style={{ "--ex-from": from ?? a, "--ex-to": to ?? b, ...style } as CSSProperties}
     >
-      {label} <span aria-hidden="true" className="card-arrow">→</span>
+      {label}{" "}
+      <span aria-hidden="true" className="card-arrow">
+        →
+      </span>
     </a>
   );
 }

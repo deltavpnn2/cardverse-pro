@@ -1,7 +1,22 @@
 import {
-  siSteam, siPlaystation, siRoblox, siRazer, siRiotgames, siEpicgames, siNetflix, siSpotify,
-  siApple, siGoogleplay, siPubg, siValorant, siLeagueoflegends, siBattledotnet, siEa, siTwitch,
-  siDiscord, siUbisoft,
+  siSteam,
+  siPlaystation,
+  siRoblox,
+  siRazer,
+  siRiotgames,
+  siEpicgames,
+  siNetflix,
+  siSpotify,
+  siApple,
+  siGoogleplay,
+  siPubg,
+  siValorant,
+  siLeagueoflegends,
+  siBattledotnet,
+  siEa,
+  siTwitch,
+  siDiscord,
+  siUbisoft,
 } from "simple-icons";
 
 /** Brand mark used only to identify a card/service. No affiliation implied. */

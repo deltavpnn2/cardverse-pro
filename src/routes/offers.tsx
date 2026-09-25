@@ -35,9 +35,7 @@ function OffersPage() {
     return offers.filter((o) => {
       const matchesCategory = category === "All" || o.category === category;
       const matchesQuery =
-        q === "" ||
-        o.title.toLowerCase().includes(q) ||
-        o.category.toLowerCase().includes(q);
+        q === "" || o.title.toLowerCase().includes(q) || o.category.toLowerCase().includes(q);
       return matchesCategory && matchesQuery;
     });
   }, [query, category]);

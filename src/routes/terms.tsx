@@ -7,14 +7,12 @@ export const Route = createFileRoute("/terms")({
       { title: "Terms of Use — CardVerse" },
       {
         name: "description",
-        content:
-          "The terms that apply when you use the CardVerse informational website.",
+        content: "The terms that apply when you use the CardVerse informational website.",
       },
       { property: "og:title", content: "Terms of Use — CardVerse" },
       {
         property: "og:description",
-        content:
-          "The terms that apply when you use the CardVerse informational website.",
+        content: "The terms that apply when you use the CardVerse informational website.",
       },
     ],
   }),

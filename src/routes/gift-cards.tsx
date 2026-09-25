@@ -35,9 +35,7 @@ function GiftCardsPage() {
     return giftCards.filter((c) => {
       const matchesCategory = category === "All" || c.category === category;
       const matchesQuery =
-        q === "" ||
-        c.name.toLowerCase().includes(q) ||
-        c.category.toLowerCase().includes(q);
+        q === "" || c.name.toLowerCase().includes(q) || c.category.toLowerCase().includes(q);
       return matchesCategory && matchesQuery;
     });
   }, [query, category]);

@@ -98,7 +98,8 @@
   --gradient-teal-violet: linear-gradient(135deg, var(--primary), var(--violet));
 
   --shadow-glass: 0 20px 50px -25px oklch(0 0 0 / 0.85);
-  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 30%, transparent),
+  --shadow-glow:
+    0 0 0 1px color-mix(in oklab, var(--primary) 30%, transparent),
     0 24px 60px -28px color-mix(in oklab, var(--primary) 55%, transparent);
 }
 
@@ -133,11 +134,31 @@
   position: relative;
   min-height: 100vh;
   background:
-    radial-gradient(60rem 40rem at 78% -10%, color-mix(in oklab, var(--primary) 14%, transparent), transparent 70%),
-    radial-gradient(48rem 36rem at 5% 18%, color-mix(in oklab, var(--primary-glow) 12%, transparent), transparent 70%),
-    radial-gradient(40rem 30rem at 95% 45%, color-mix(in oklab, var(--pink) 7%, transparent), transparent 70%),
-    radial-gradient(44rem 34rem at 0% 70%, color-mix(in oklab, var(--violet) 9%, transparent), transparent 70%),
-    radial-gradient(52rem 40rem at 50% 108%, color-mix(in oklab, var(--violet) 12%, transparent), transparent 70%),
+    radial-gradient(
+      60rem 40rem at 78% -10%,
+      color-mix(in oklab, var(--primary) 14%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      48rem 36rem at 5% 18%,
+      color-mix(in oklab, var(--primary-glow) 12%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      40rem 30rem at 95% 45%,
+      color-mix(in oklab, var(--pink) 7%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      44rem 34rem at 0% 70%,
+      color-mix(in oklab, var(--violet) 9%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      52rem 40rem at 50% 108%,
+      color-mix(in oklab, var(--violet) 12%, transparent),
+      transparent 70%
+    ),
     var(--background);
 }
 
@@ -220,18 +241,30 @@
   text-decoration: none;
   cursor: pointer;
   background: linear-gradient(135deg, var(--ex-from, var(--primary)), var(--ex-to, var(--blue)));
-  box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.25),
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.25),
     0 10px 24px -14px color-mix(in oklab, var(--ex-from, var(--primary)) 90%, transparent);
-  transition: transform 0.18s ease, box-shadow 0.25s ease, filter 0.2s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.25s ease,
+    filter 0.2s ease;
   &:hover {
     filter: brightness(1.1) saturate(1.1);
     transform: translateY(-2px);
-    box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.3),
+    box-shadow:
+      inset 0 1px 0 oklch(1 0 0 / 0.3),
       0 16px 34px -14px color-mix(in oklab, var(--ex-from, var(--primary)) 100%, transparent);
   }
-  &:hover .card-arrow { transform: translateX(4px); }
-  &:active { transform: scale(0.97); }
-  &:focus-visible { outline: 2px solid var(--foreground); outline-offset: 3px; }
+  &:hover .card-arrow {
+    transform: translateX(4px);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 3px;
+  }
 }
 
 @utility card-premium {
@@ -240,16 +273,29 @@
   background: color-mix(in oklab, var(--card) 85%, transparent);
   border: 1px solid oklch(1 0 0 / 8%);
   backdrop-filter: blur(14px);
-  box-shadow: var(--shadow-glass), 0 18px 50px -34px color-mix(in oklab, var(--a1, var(--primary)) 60%, transparent);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow:
+    var(--shadow-glass),
+    0 18px 50px -34px color-mix(in oklab, var(--a1, var(--primary)) 60%, transparent);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
   &::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(140deg, color-mix(in oklab, var(--a1, var(--primary)) 55%, transparent), transparent 40%, transparent 65%, color-mix(in oklab, var(--a2, var(--violet)) 45%, transparent));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    background: linear-gradient(
+      140deg,
+      color-mix(in oklab, var(--a1, var(--primary)) 55%, transparent),
+      transparent 40%,
+      transparent 65%,
+      color-mix(in oklab, var(--a2, var(--violet)) 45%, transparent)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
@@ -259,16 +305,28 @@
   &:hover {
     transform: translateY(-4px);
     border-color: oklch(1 0 0 / 14%);
-    box-shadow: var(--shadow-glass), 0 26px 60px -26px color-mix(in oklab, var(--a1, var(--primary)) 75%, transparent);
+    box-shadow:
+      var(--shadow-glass),
+      0 26px 60px -26px color-mix(in oklab, var(--a1, var(--primary)) 75%, transparent);
   }
-  &:hover::before { opacity: 1; }
-  &:hover .card-zoom { transform: scale(1.02); }
-  &:hover .btn-explore { filter: brightness(1.08); }
+  &:hover::before {
+    opacity: 1;
+  }
+  &:hover .card-zoom {
+    transform: scale(1.02);
+  }
+  &:hover .btn-explore {
+    filter: brightness(1.08);
+  }
 }
 
 @utility card-offer {
   background:
-    radial-gradient(120% 60% at 100% 100%, color-mix(in oklab, var(--a2, var(--violet)) 16%, transparent), transparent 70%),
+    radial-gradient(
+      120% 60% at 100% 100%,
+      color-mix(in oklab, var(--a2, var(--violet)) 16%, transparent),
+      transparent 70%
+    ),
     color-mix(in oklab, var(--card) 88%, transparent);
 }
 
@@ -327,7 +385,12 @@
   font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.035em;
-  background: linear-gradient(120deg, var(--foreground) 35%, color-mix(in oklab, var(--primary) 75%, white) 75%, color-mix(in oklab, var(--violet) 45%, white));
+  background: linear-gradient(
+    120deg,
+    var(--foreground) 35%,
+    color-mix(in oklab, var(--primary) 75%, white) 75%,
+    color-mix(in oklab, var(--violet) 45%, white)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -354,7 +417,9 @@
 
 @media (hover: hover) {
   .card-premium:hover .logo-badge {
-    box-shadow: 0 6px 16px -6px oklch(0 0 0 / 0.6), 0 0 18px -2px color-mix(in oklab, var(--a1, var(--primary)) 70%, transparent);
+    box-shadow:
+      0 6px 16px -6px oklch(0 0 0 / 0.6),
+      0 0 18px -2px color-mix(in oklab, var(--a1, var(--primary)) 70%, transparent);
   }
 }
 

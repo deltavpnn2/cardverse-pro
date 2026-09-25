@@ -85,8 +85,7 @@ function ContactPage() {
             </button>
             {sent && (
               <p role="status" className="mt-4 text-sm text-primary">
-                Thanks — your message has been noted. This form is not yet connected to
-                an inbox.
+                Thanks — your message has been noted. This form is not yet connected to an inbox.
               </p>
             )}
           </form>
@@ -94,12 +93,11 @@ function ContactPage() {
           <aside className="glass rounded-3xl p-7 text-sm leading-relaxed text-muted-foreground md:p-9">
             <h2 className="text-lg font-bold text-foreground">Contact information</h2>
             <p className="mt-3">
-              CardVerse is an independent online project. We reply to messages sent
-              through this form.
+              CardVerse is an independent online project. We reply to messages sent through this
+              form.
             </p>
             <p className="mt-3">
-              For listing corrections, please include the card or offer name in your
-              message.
+              For listing corrections, please include the card or offer name in your message.
             </p>
           </aside>
         </div>

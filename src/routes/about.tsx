@@ -28,16 +28,15 @@ function AboutPage() {
       <section className="container-page pb-20">
         <div className="glass mx-auto max-w-3xl space-y-6 rounded-3xl p-8 text-[15px] leading-relaxed text-muted-foreground md:p-12">
           <p>
-            CardVerse is an independent informational platform designed to help
-            visitors discover digital gift cards, gaming cards and selected online
-            offers.
+            CardVerse is an independent informational platform designed to help visitors discover
+            digital gift cards, gaming cards and selected online offers.
           </p>
           <div>
             <h2 className="text-xl font-bold text-foreground">What we do</h2>
             <p className="mt-3">
-              We organize publicly known categories of digital cards and offers into a
-              clear, browsable format so you can review your options in one place
-              before continuing to a provider's own destination.
+              We organize publicly known categories of digital cards and offers into a clear,
+              browsable format so you can review your options in one place before continuing to a
+              provider's own destination.
             </p>
           </div>
           <div>
@@ -50,9 +49,9 @@ function AboutPage() {
             </ul>
           </div>
           <p>
-            Brand names referenced on this website belong to their respective owners.
-            CardVerse is not affiliated with or endorsed by any card issuer, game
-            publisher, retailer or service provider unless explicitly stated.
+            Brand names referenced on this website belong to their respective owners. CardVerse is
+            not affiliated with or endorsed by any card issuer, game publisher, retailer or service
+            provider unless explicitly stated.
           </p>
         </div>
       </section>

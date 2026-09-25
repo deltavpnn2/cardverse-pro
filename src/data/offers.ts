@@ -24,13 +24,7 @@ export interface Offer {
   ctaUrl: string;
 }
 
-export const offerCategories = [
-  "All",
-  "Gaming",
-  "Entertainment",
-  "Shopping",
-  "Digital",
-] as const;
+export const offerCategories = ["All", "Gaming", "Entertainment", "Shopping", "Digital"] as const;
 
 export const offers: Offer[] = [
   {

@@ -28,9 +28,7 @@ export function HowItWorks() {
             <article key={s.n} className="glass hover-lift rounded-2xl p-7">
               <p className="text-4xl font-extrabold text-primary">{s.n}</p>
               <h3 className="mt-4 text-lg font-bold tracking-tight">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {s.text}
-              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
             </article>
           ))}
         </div>

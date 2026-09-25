@@ -15,7 +15,9 @@ export function OfferCard({ offer, index = 0 }: { offer: Offer; index?: number }
   return (
     <article
       className="card-premium card-offer animate-rise group relative flex flex-col overflow-hidden"
-      style={{ animationDelay: `${Math.min(index, 8) * 40}ms`, "--a1": a1, "--a2": a2 } as CSSProperties}
+      style={
+        { animationDelay: `${Math.min(index, 8) * 40}ms`, "--a1": a1, "--a2": a2 } as CSSProperties
+      }
     >
       <div
         aria-hidden="true"
@@ -31,8 +33,14 @@ export function OfferCard({ offer, index = 0 }: { offer: Offer; index?: number }
           height={608}
           className="card-zoom size-full object-cover"
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-        <span className="badge-pill absolute top-3 left-3 uppercase" style={{ "--badge": a1 } as CSSProperties}>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent"
+        />
+        <span
+          className="badge-pill absolute top-3 left-3 uppercase"
+          style={{ "--badge": a1 } as CSSProperties}
+        >
           ✦ {offer.badge}
         </span>
       </div>
