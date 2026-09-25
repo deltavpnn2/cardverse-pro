@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { GiftCard } from "@/data/giftCards";
 import { ExploreButton } from "./ExploreButton";
 
-function CardFace({ card }: { card: GiftCard }) {
+export function CardFace({ card }: { card: GiftCard }) {
   const [c1, c2] = card.colors;
   const { logo } = card;
   return (

@@ -383,18 +383,21 @@
 @utility hero-title {
   font-family: var(--font-display);
   font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+  text-wrap: balance;
+}
+
+@utility hero-title-accent {
   background: linear-gradient(
     120deg,
-    var(--foreground) 35%,
-    color-mix(in oklab, var(--primary) 75%, white) 75%,
-    color-mix(in oklab, var(--violet) 45%, white)
+    color-mix(in oklab, var(--primary) 80%, white),
+    color-mix(in oklab, var(--violet) 55%, white)
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-wrap: balance;
 }
 
 @utility logo-badge {

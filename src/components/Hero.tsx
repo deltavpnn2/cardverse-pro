@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import heroImage from "@/assets/hero-cards.jpg";
+import { HeroCardStack } from "./HeroCardStack";
 
 export function Hero() {
   return (
@@ -18,13 +18,18 @@ export function Hero() {
       />
       <div className="container-page relative grid items-center gap-10 md:grid-cols-[1fr_0.9fr] lg:gap-14">
         <div className="animate-rise min-w-0">
-          <span className="glass inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[10px] font-semibold tracking-[0.14em] uppercase sm:text-xs">
-            <span aria-hidden="true" className="animate-dot size-2 rounded-full bg-primary" />
+          <span className="glass inline-flex w-fit items-center gap-2 rounded-full px-3 py-1.5 text-[9px] font-semibold tracking-[0.1em] whitespace-nowrap uppercase min-[380px]:px-3.5 min-[380px]:text-[10px] min-[380px]:tracking-[0.14em] sm:text-xs">
+            <span
+              aria-hidden="true"
+              className="animate-dot size-2 shrink-0 rounded-full bg-primary"
+            />
             Explore Digital Cards &amp; Offers
           </span>
 
-          <h1 className="hero-title mt-5 text-[2.3rem] sm:text-5xl lg:text-[4.1rem]">
-            Explore Gift Cards &amp; Offers
+          <h1 className="hero-title mt-5 text-[2.5rem] sm:text-6xl lg:text-[4rem]">
+            Explore Gift Cards
+            <br />
+            <span className="hero-title-accent">&amp; Offers</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground lg:text-lg">
@@ -37,7 +42,7 @@ export function Hero() {
               to="/gift-cards"
               className="btn-base btn-primary px-7 text-base shadow-[0_14px_40px_-16px_var(--primary)]"
             >
-              Explore Gift Cards →
+              Free Gift Cards →
             </Link>
             <Link to="/offers" className="btn-base btn-ghost border-violet/50 px-7 text-base">
               View Offers →
@@ -45,19 +50,13 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative min-w-0">
+        <div className="relative min-w-0 px-4 py-6 sm:px-6">
           <div
             aria-hidden="true"
             className="absolute inset-4 rounded-[3rem] bg-gradient-to-br from-primary/25 via-blue/20 to-violet/25 blur-3xl"
           />
-          <div className="animate-float relative rounded-3xl bg-gradient-to-br from-primary/50 via-blue/20 to-violet/50 p-px shadow-[0_40px_90px_-40px_rgba(0,0,0,0.9)]">
-            <img
-              src={heroImage}
-              alt="Floating digital gift cards lit with cyan and purple neon light"
-              width={1280}
-              height={1024}
-              className="w-full rounded-3xl object-cover"
-            />
+          <div className="animate-float relative">
+            <HeroCardStack />
           </div>
         </div>
       </div>
